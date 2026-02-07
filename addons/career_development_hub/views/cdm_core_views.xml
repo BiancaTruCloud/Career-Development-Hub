@@ -1,0 +1,47 @@
+<odoo>
+    <record id="view_cdm_proficiency_level_tree" model="ir.ui.view">
+        <field name="name">cdm.proficiency.level.tree</field>
+        <field name="model">cdm.proficiency.level</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence"/>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_res_config_settings_cdm" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.cdm</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="Career Development" name="career_development_hub" groups="career_development_hub.group_cdm_hr_admin">
+                    <block title="General Settings">
+                        <setting string="Enable Skill Expiry">
+                            <field name="enable_skill_expiry"/>
+                        </setting>
+                        <setting string="Default Skill Expiry (months)">
+                            <field name="default_skill_expiry_months"/>
+                        </setting>
+                        <setting string="Require manager verification for soft skills">
+                            <field name="require_manager_verification_for_soft_skills"/>
+                        </setting>
+                        <setting string="HR Approval Cost Threshold">
+                            <field name="course_cost_hr_threshold"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="action_cdm_proficiency_levels" model="ir.actions.act_window">
+        <field name="name">Proficiency Levels</field>
+        <field name="res_model">cdm.proficiency.level</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

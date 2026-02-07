@@ -1,0 +1,11 @@
+<odoo>
+    <record id="ir_cron_cdm_skill_expiry_notifier" model="ir.cron">
+        <field name="name">CDM Skill expiry notifier</field>
+        <field name="model_id" ref="model_cdm_employee_skill"/>
+        <field name="state">code</field>
+        <field name="code">model.cron_skill_expiry_notifier()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active">True</field>
+    </record>
+</odoo>
