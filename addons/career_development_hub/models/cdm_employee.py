@@ -17,7 +17,7 @@ class HrEmployee(models.Model):
         for rec in self:
             domain = [("job_id", "=", rec.job_id.id), ("active", "=", True), "|", ("date_from", "=", False), ("date_from", "<=", today), "|", ("date_to", "=", False), ("date_to", ">=", today)]
             if rec.department_id:
-                domain = ["&"] + domain + ["|", ("department_id", "=", False), ("department_id", "=", rec.department_id.id)]
+                domain = domain + ["|", ("department_id", "=", False), ("department_id", "=", rec.department_id.id)]
             rec.cdm_role_profile_id = self.env["cdm.role.profile"].search(domain, limit=1, order="id desc")
 
     @api.depends("cdm_skill_ids.current_level_id", "cdm_role_profile_id")
