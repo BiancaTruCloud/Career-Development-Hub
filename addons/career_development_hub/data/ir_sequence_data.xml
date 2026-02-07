@@ -1,0 +1,8 @@
+<odoo>
+    <record id="seq_cdm_course_request" model="ir.sequence">
+        <field name="name">CDM Course Request</field>
+        <field name="code">cdm.course.request</field>
+        <field name="prefix">CRQ/%(year)s/</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

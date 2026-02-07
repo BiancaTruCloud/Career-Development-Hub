@@ -1,0 +1,64 @@
+<odoo>
+    <record id="view_cdm_course_tree" model="ir.ui.view">
+        <field name="name">cdm.course.tree</field>
+        <field name="model">cdm.course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="provider"/>
+                <field name="course_type"/>
+                <field name="cost"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cdm_course_request_form" model="ir.ui.view">
+        <field name="name">cdm.course.request.form</field>
+        <field name="model">cdm.course.request</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit" states="draft" class="oe_highlight"/>
+                    <button name="action_manager_approve" type="object" string="Manager Approve" states="manager_review"/>
+                    <button name="action_hr_approve" type="object" string="HR Approve" states="hr_review"/>
+                    <button name="action_reject" type="object" string="Reject" states="manager_review,hr_review"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,manager_review,hr_review,approved,rejected,completed"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="employee_id"/>
+                        <field name="course_id"/>
+                        <field name="total_cost" readonly="1"/>
+                        <field name="approved_on" readonly="1"/>
+                        <field name="completed_on" readonly="1"/>
+                    </group>
+                    <field name="justification"/>
+                    <field name="target_skill_ids" widget="many2many_tags"/>
+                    <field name="approver_step_ids">
+                        <tree editable="bottom">
+                            <field name="step_type"/>
+                            <field name="approver_user_id"/>
+                            <field name="decision"/>
+                            <field name="decision_on"/>
+                            <field name="comments"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cdm_courses" model="ir.actions.act_window">
+        <field name="name">Courses</field>
+        <field name="res_model">cdm.course</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_cdm_course_requests" model="ir.actions.act_window">
+        <field name="name">Course Requests</field>
+        <field name="res_model">cdm.course.request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

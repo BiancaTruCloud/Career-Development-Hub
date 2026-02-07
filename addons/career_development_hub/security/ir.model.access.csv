@@ -1,0 +1,34 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cdm_proficiency_hr_admin,cdm.proficiency.level hr admin,model_cdm_proficiency_level,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_proficiency_manager,cdm.proficiency.level manager,model_cdm_proficiency_level,career_development_hub.group_cdm_manager,1,0,0,0
+access_cdm_skill_category_hr_admin,cdm.skill.category hr admin,model_cdm_skill_category,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_skill_category_manager,cdm.skill.category manager,model_cdm_skill_category,career_development_hub.group_cdm_manager,1,0,0,0
+access_cdm_skill_hr_admin,cdm.skill hr admin,model_cdm_skill,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_skill_manager,cdm.skill manager,model_cdm_skill,career_development_hub.group_cdm_manager,1,0,0,0
+access_cdm_skill_employee,cdm.skill employee,model_cdm_skill,career_development_hub.group_cdm_employee,1,0,0,0
+access_cdm_role_profile_hr_admin,cdm.role.profile hr admin,model_cdm_role_profile,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_role_profile_manager,cdm.role.profile manager,model_cdm_role_profile,career_development_hub.group_cdm_manager,1,0,0,0
+access_cdm_role_profile_line_hr_admin,cdm.role.profile.line hr admin,model_cdm_role_profile_line,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_role_profile_line_manager,cdm.role.profile.line manager,model_cdm_role_profile_line,career_development_hub.group_cdm_manager,1,0,0,0
+access_cdm_employee_skill_employee,cdm.employee.skill employee,model_cdm_employee_skill,career_development_hub.group_cdm_employee,1,1,1,0
+access_cdm_employee_skill_manager,cdm.employee.skill manager,model_cdm_employee_skill,career_development_hub.group_cdm_manager,1,1,1,0
+access_cdm_employee_skill_hr_admin,cdm.employee.skill hr admin,model_cdm_employee_skill,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_skill_evidence_employee,cdm.skill.evidence employee,model_cdm_skill_evidence,career_development_hub.group_cdm_employee,1,1,1,0
+access_cdm_skill_evidence_manager,cdm.skill.evidence manager,model_cdm_skill_evidence,career_development_hub.group_cdm_manager,1,1,1,0
+access_cdm_skill_evidence_hr_admin,cdm.skill.evidence hr admin,model_cdm_skill_evidence,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_assessment_employee,cdm.assessment employee,model_cdm_assessment,career_development_hub.group_cdm_employee,1,0,0,0
+access_cdm_assessment_hr_admin,cdm.assessment hr admin,model_cdm_assessment,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_assessment_skill_map_hr_admin,cdm.assessment.skill.map hr admin,model_cdm_assessment_skill_map,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_scoring_rule_hr_admin,cdm.scoring.rule hr admin,model_cdm_scoring_rule,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_scoring_rule_line_hr_admin,cdm.scoring.rule.line hr admin,model_cdm_scoring_rule_line,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_attempt_employee,cdm.assessment.attempt employee,model_cdm_assessment_attempt,career_development_hub.group_cdm_employee,1,1,1,0
+access_cdm_attempt_manager,cdm.assessment.attempt manager,model_cdm_assessment_attempt,career_development_hub.group_cdm_manager,1,1,1,0
+access_cdm_attempt_hr_admin,cdm.assessment.attempt hr admin,model_cdm_assessment_attempt,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_course_employee,cdm.course employee,model_cdm_course,career_development_hub.group_cdm_employee,1,0,0,0
+access_cdm_course_hr_admin,cdm.course hr admin,model_cdm_course,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_course_skill_map_hr_admin,cdm.course.skill.map hr admin,model_cdm_course_skill_map,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_course_request_employee,cdm.course.request employee,model_cdm_course_request,career_development_hub.group_cdm_employee,1,1,1,0
+access_cdm_course_request_manager,cdm.course.request manager,model_cdm_course_request,career_development_hub.group_cdm_manager,1,1,1,0
+access_cdm_course_request_hr_admin,cdm.course.request hr admin,model_cdm_course_request,career_development_hub.group_cdm_hr_admin,1,1,1,1
+access_cdm_course_approval_step_manager,cdm.course.approval.step manager,model_cdm_course_approval_step,career_development_hub.group_cdm_manager,1,1,1,0
+access_cdm_course_approval_step_hr_admin,cdm.course.approval.step hr admin,model_cdm_course_approval_step,career_development_hub.group_cdm_hr_admin,1,1,1,1

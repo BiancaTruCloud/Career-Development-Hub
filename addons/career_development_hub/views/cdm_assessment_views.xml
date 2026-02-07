@@ -1,0 +1,73 @@
+<odoo>
+    <record id="view_cdm_assessment_tree" model="ir.ui.view">
+        <field name="name">cdm.assessment.tree</field>
+        <field name="model">cdm.assessment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="assessment_type"/>
+                <field name="survey_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cdm_assessment_form" model="ir.ui.view">
+        <field name="name">cdm.assessment.form</field>
+        <field name="model">cdm.assessment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="assessment_type"/>
+                        <field name="survey_id"/>
+                        <field name="external_url"/>
+                        <field name="duration_minutes"/>
+                        <field name="active"/>
+                    </group>
+                    <field name="map_line_ids">
+                        <tree editable="bottom">
+                            <field name="skill_id"/>
+                            <field name="scoring_rule_id"/>
+                            <field name="max_level_id"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_cdm_assessment_attempt_form" model="ir.ui.view">
+        <field name="name">cdm.assessment.attempt.form</field>
+        <field name="model">cdm.assessment.attempt</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_apply_result" type="object" string="Apply Result" class="oe_highlight" states="draft"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="assessment_id"/>
+                        <field name="score"/>
+                        <field name="awarded_level_id" readonly="1"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cdm_assessments" model="ir.actions.act_window">
+        <field name="name">Assessments</field>
+        <field name="res_model">cdm.assessment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_cdm_assessment_attempts" model="ir.actions.act_window">
+        <field name="name">Assessment Attempts</field>
+        <field name="res_model">cdm.assessment.attempt</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

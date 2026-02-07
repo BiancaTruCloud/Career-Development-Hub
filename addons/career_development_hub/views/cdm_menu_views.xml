@@ -1,0 +1,24 @@
+<odoo>
+    <menuitem id="menu_cdm_root" name="Career Development" sequence="50" groups="career_development_hub.group_cdm_employee,career_development_hub.group_cdm_manager,career_development_hub.group_cdm_hr_admin"/>
+
+    <menuitem id="menu_cdm_my_development" name="My Development" parent="menu_cdm_root" sequence="10"/>
+    <menuitem id="menu_cdm_team" name="Team" parent="menu_cdm_root" sequence="20" groups="career_development_hub.group_cdm_manager,career_development_hub.group_cdm_hr_admin"/>
+    <menuitem id="menu_cdm_approvals" name="Approvals" parent="menu_cdm_root" sequence="30" groups="career_development_hub.group_cdm_manager,career_development_hub.group_cdm_hr_admin"/>
+    <menuitem id="menu_cdm_configuration" name="Configuration" parent="menu_cdm_root" sequence="40" groups="career_development_hub.group_cdm_hr_admin"/>
+
+    <menuitem id="menu_cdm_my_skills" name="My Skills" parent="menu_cdm_my_development" action="action_cdm_my_skills"/>
+    <menuitem id="menu_cdm_my_assessments" name="Assessments" parent="menu_cdm_my_development" action="action_cdm_assessment_attempts"/>
+    <menuitem id="menu_cdm_my_courses" name="Courses" parent="menu_cdm_my_development" action="action_cdm_courses"/>
+    <menuitem id="menu_cdm_my_requests" name="My Requests" parent="menu_cdm_my_development" action="action_cdm_course_requests"/>
+
+    <menuitem id="menu_cdm_team_skills" name="Team Skills" parent="menu_cdm_team" action="action_cdm_employee_skills"/>
+    <menuitem id="menu_cdm_pending_verifications" name="Pending Verifications" parent="menu_cdm_team" action="action_cdm_employee_skills"/>
+
+    <menuitem id="menu_cdm_course_requests" name="Course Requests" parent="menu_cdm_approvals" action="action_cdm_course_requests"/>
+
+    <menuitem id="menu_cdm_skills" name="Skills" parent="menu_cdm_configuration" action="action_cdm_skills"/>
+    <menuitem id="menu_cdm_skill_categories" name="Skill Categories" parent="menu_cdm_configuration" action="action_cdm_skill_categories"/>
+    <menuitem id="menu_cdm_role_profiles" name="Role Profiles" parent="menu_cdm_configuration" action="action_cdm_role_profiles"/>
+    <menuitem id="menu_cdm_assessments" name="Assessments" parent="menu_cdm_configuration" action="action_cdm_assessments"/>
+    <menuitem id="menu_cdm_proficiency" name="Proficiency Levels" parent="menu_cdm_configuration" action="action_cdm_proficiency_levels"/>
+</odoo>

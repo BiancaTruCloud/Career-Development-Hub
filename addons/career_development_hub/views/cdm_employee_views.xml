@@ -1,0 +1,83 @@
+<odoo>
+    <record id="view_cdm_employee_skill_tree" model="ir.ui.view">
+        <field name="name">cdm.employee.skill.tree</field>
+        <field name="model">cdm.employee.skill</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="skill_id"/>
+                <field name="current_level_id"/>
+                <field name="target_level_id"/>
+                <field name="verification_status"/>
+                <field name="is_expired"/>
+                <field name="expires_on"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_cdm_employee_skill_form" model="ir.ui.view">
+        <field name="name">cdm.employee.skill.form</field>
+        <field name="model">cdm.employee.skill</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_request_verification" type="object" string="Request Verification" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="skill_id"/>
+                        <field name="current_level_id"/>
+                        <field name="target_level_id" readonly="1"/>
+                        <field name="override_target"/>
+                        <field name="source_type"/>
+                        <field name="verification_status"/>
+                        <field name="last_updated" readonly="1"/>
+                        <field name="expires_on"/>
+                        <field name="is_expired" readonly="1"/>
+                    </group>
+                    <field name="notes"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_employee_form_view_inherit_cdm" model="ir.ui.view">
+        <field name="name">hr.employee.form.cdm</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Career Development">
+                    <group>
+                        <field name="cdm_role_profile_id"/>
+                        <field name="cdm_readiness_score" readonly="1"/>
+                        <field name="cdm_gap_count" readonly="1"/>
+                    </group>
+                    <field name="cdm_skill_ids" context="{'default_employee_id': active_id}">
+                        <tree editable="bottom">
+                            <field name="skill_id"/>
+                            <field name="current_level_id"/>
+                            <field name="target_level_id"/>
+                            <field name="verification_status"/>
+                            <field name="is_expired"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_cdm_employee_skills" model="ir.actions.act_window">
+        <field name="name">Team Skills</field>
+        <field name="res_model">cdm.employee.skill</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_cdm_my_skills" model="ir.actions.act_window">
+        <field name="name">My Skills</field>
+        <field name="res_model">cdm.employee.skill</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('employee_id.user_id','=',uid)]</field>
+    </record>
+</odoo>
